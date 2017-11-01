@@ -1,0 +1,48 @@
+/*
+ * @author Jhon Ve
+ * @ version nov 01  de 2017
+ */
+import processing.core.PApplet;
+
+public class mani extends PApplet {
+
+	public static void main(String[] args) {
+		
+		PApplet.main("mani");
+	
+	}
+	
+	int square_size = 8, width = 100 , height = 100;
+	
+	GameofLife gol = new GameofLife(width , height);
+	
+	public void settings() {
+		
+		  size(width * square_size , height * square_size);
+		  
+		}
+
+		public void draw() {
+			
+		  background(50);
+		  
+		  for(int i = 0 ; i< height ; i++)
+		  {
+			  for(int j = 0; j < width; i++)
+			  {
+				  if(gol.Cellular_automata[i][j] == 1)
+				  
+					  fill(255,0,0);
+				  else
+					  fill(0);
+				  
+				  rect(j*square_size , i * square_size , square_size , square_size);
+				  }
+				  
+			 
+		  }
+		  
+		}
+	
+	
+}
